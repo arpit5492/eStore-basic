@@ -1,9 +1,10 @@
 const express = require("express");
 const path = require("path");
 const router = express.Router();
+const {products} = require("./new_product.js");
 
 router.get("/", (req, res) => {
-    res.render("index");
+    res.render("index", {products: products});
 });
 
 module.exports = router;
