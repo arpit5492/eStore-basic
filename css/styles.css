@@ -8,3 +8,8 @@ body{
     justify-content: space-around;
     flex-wrap: wrap;
 }
+
+.form-container{
+    display: flex;
+    justify-content: center;
+}
