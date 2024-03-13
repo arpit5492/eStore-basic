@@ -1,0 +1,1 @@
+### E-Store basic project with some of the functionalities using templating engine
