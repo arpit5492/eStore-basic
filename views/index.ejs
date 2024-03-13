@@ -12,34 +12,25 @@
     <%- include("./partials/navbar.ejs") %>
 
     <div class="card-container mt-4">
-        <div class="card m-3 shadow-lg">
-            <img class="card-img-top" style="height: 200px;" src="https://media.istockphoto.com/id/184276818/photo/red-apple.jpg?s=612x612&w=0&k=20&c=NvO-bLsG0DJ_7Ii8SSVoKLurzjmV0Qi4eGfn6nW3l5w=" alt="Apple image" style="width: 200px;">
-            <div class="card-body">
-                <h3 class="fs-5">Apples</h3>
-                <button class="btn btn-warning w-100">Add to Cart</button>
+        <% if(products.length > 0) { %>
+            <% for(let prod of products) { %>
+                <div class="card m-3 shadow-lg">
+                    <img class="card-img-top" style="height: 200px;" src=<%= "../assets/"+prod.img %> 
+                        alt="Apple image" 
+                        style="width: 200px;"
+                    >
+                    <div class="card-body">
+                        <h3 class="fs-5"><%= prod.title %></h3>
+                        <button class="btn btn-warning w-100">Add to Cart</button>
+                    </div>
+                </div>
+            <% } %>
+        <% } else { %>
+            <div class="card m-3 shadow-lg">
+                <h3 class="p-3">No Products Available</h3>
+                <a href="/new_product" class="btn btn-outline-dark fs-5 m-3">New Product</a>
             </div>
-        </div>
-        <div class="card m-3 shadow-lg">
-            <img class="card-img-top" style="height: 200px;" src="https://media.istockphoto.com/id/173242750/photo/banana-bunch.jpg?s=612x612&w=0&k=20&c=MAc8AXVz5KxwWeEmh75WwH6j_HouRczBFAhulLAtRUU=" alt="Banana image" style="width: 200px;">
-            <div class="card-body">
-                <h3 class="fs-5">Banana</h3>
-                <button class="btn btn-warning w-100">Add to Cart</button>
-            </div>
-        </div>
-        <div class="card m-3 shadow-lg">
-            <img class="card-img-top" style="height: 200px;" src="https://media.istockphoto.com/id/1186925401/photo/isolated-bunch-of-red-grapes.jpg?s=612x612&w=0&k=20&c=HIsuAmjePc4zNG6V6mv7i2XzURlOULEkXecJkKpuZCE=" alt="Grapes image" style="width: 200px;">
-            <div class="card-body">
-                <h3 class="fs-5">Grapes</h3>
-                <button class="btn btn-warning w-100">Add to Cart</button>
-            </div>
-        </div>
-        <div class="card m-3 shadow-lg">
-            <img class="card-img-top" style="height: 200px;" src="https://media.istockphoto.com/id/185284489/photo/orange.jpg?s=612x612&w=0&k=20&c=m4EXknC74i2aYWCbjxbzZ6EtRaJkdSJNtekh4m1PspE=" alt="Orange image" style="width: 200px;">
-            <div class="card-body">
-                <h3 class="fs-5">Oranges</h3>
-                <button class="btn btn-warning w-100">Add to Cart</button>
-            </div>
-        </div>
+        <% } %>
     </div>
 </body>
 </html>
