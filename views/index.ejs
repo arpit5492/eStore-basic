@@ -26,10 +26,7 @@
                 </div>
             <% } %>
         <% } else { %>
-            <div class="card m-3 shadow-lg">
-                <h3 class="p-3">No Products Available</h3>
-                <a href="/new_product" class="btn btn-outline-dark fs-5 m-3">New Product</a>
-            </div>
+            <%- include("./partials/noProd.ejs") %>
         <% } %>
     </div>
 </body>
