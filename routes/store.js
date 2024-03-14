@@ -4,7 +4,7 @@ const router = express.Router();
 const {products} = require("./new_product.js");
 
 router.get("/", (req, res) => {
-    res.render("index", {products: products});
+    res.render("index", {products: products, title: "Store"});
 });
 
 module.exports = router;

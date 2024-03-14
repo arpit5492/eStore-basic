@@ -8,7 +8,7 @@ router.use(bodyParser.urlencoded({extended: true}));
 const products = [];
 
 router.get("/new_product", (req, res) => {
-    res.render("new_prod");
+    res.render("new_prod", {title: "New Product"});
 });
 
 router.post("/new_prod", (req, res) => {
